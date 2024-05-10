@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "noImplicitAny": false,
+    "strict": false,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2019",
+    "sourceMap": true,
+    "incremental": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+  },
+  "include": ["src/**/*", "public/**/*"],
+}
