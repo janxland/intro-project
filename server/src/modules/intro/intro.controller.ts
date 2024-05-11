@@ -4,28 +4,34 @@ import {
   Get,
   Body,
   Query,
-  Patch,
   Param,
-  Delete,
+  Res,
   UseInterceptors,
   UploadedFile,
-  UseGuards,
-  NotFoundException,
 } from '@nestjs/common';
 import { IntroService } from './intro.service';
-import { AuthGuard } from '@nestjs/passport';
+import { Response } from 'express';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { v4 as uuidv4 } from 'uuid';
-import fs from 'fs';
-import path from 'path';
+import { readFile } from 'fs';
 @Controller('intro')
 // @UseGuards(AuthGuard('jwt'))
 export class IntroController {
   constructor(private readonly introService: IntroService) {
       console.log('IntroController instantiated');
   }
+  /**
+   * 
+   * @param introIds 
+   * @param num 
+   * @param page 
+   * @returns 
+  */
+  @Get('/list')
+  listIntros(@Query('introIds') introIds: string,@Query('num') num: number,@Query('page') page: number){
+    return this.introService.listIntros(introIds,num,page);
+  }
 
-  @Get()
+  @Get("/get")
   getIntro(@Query('introId') introId: string) {
     return this.introService.getIntro(introId);
   }
@@ -45,8 +51,18 @@ export class IntroController {
     @Param('id') id: string,
     @UploadedFile() file: Express.Multer.File,
   ) {
-    // Simply pass the file to the service
     const updatedIntro = await this.introService.fetchAssessment(id, file);
     return { message: 'Assessment updated successfully', data: updatedIntro };
   }
+
+  /**
+   * 简历评分排位 async calculateAssessment()
+   * @param isAll=true 如果需要评分所有为true
+   * @param ids 按给的ids评分
+   */
+  @Post('/calculateAssessment')
+  async calculateAssessment(@Body('isAll') isAll: boolean,@Body('ids') ids: string[]) {
+    return this.introService.calculateAssessment(isAll,ids);
+  }
+
 }

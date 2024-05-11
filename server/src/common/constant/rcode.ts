@@ -1,5 +1,6 @@
 export enum RCode {
-  OK,
-  FAIL,
-  ERROR,
+  OK=200,
+  FAIL=400,
+  UNAUTHORIZED=401,
+  ERROR=500,
 }

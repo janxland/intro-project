@@ -1,21 +1,30 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class Intro {
   @PrimaryGeneratedColumn('uuid')
   introId: string;
 
-  //保存文件的MD5
+  @Column({ default: '' })
+  name: string;
+
+  @Column({ default: '' })
+  school: string;
+
+  @Column({ default: '' })
+  degree: string;
+
+  @PrimaryColumn()
   @Column({ default: '' })
   MD5: string;
 
   @Column({ default: '' })
-  flieURL: string;
-  // 简历内容（OCR）
-  @Column({ default: '' })
+  fileURL: string;
+
+  @Column({ type: 'text' })
   context: string;
-  // 评分返回
-  @Column({ default: '' })
+
+  @Column({ type: 'text' })
   assessment: string;
   // 属于用户id
   @Column({ default: '' })
@@ -23,6 +32,10 @@ export class Intro {
 
   @Column({ default: 'on' })
   status: string;
+
+  //简历评分 （特殊计算方法）小数
+  @Column({ default: 0 , type: 'double'})
+  score: number;
 
   @Column({ default: '' })
   tag: string;
