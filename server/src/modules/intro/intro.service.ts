@@ -112,7 +112,7 @@ export class IntroService {
   async getAssessment(fileContent: string) {
     const completion = await this.openAI.OpenAI.chat.completions.create({
       model: 'moonshot-v1-32k',
-      temperature: 0.2,
+      temperature: 1,
       messages: [
         {
           role: 'system',

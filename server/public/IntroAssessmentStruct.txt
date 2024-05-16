@@ -1,19 +1,19 @@
-x.匹配简历主人姓名 <str-name>
-x.匹配简历主人学校 <str-school>
-x.匹配简历主人学位 <str-degree>
-x.匹配简历主人专业 <str-major>
-x.匹配简历亮点标签(如优秀的学校学位专业)(用;分割) <str-tag></str-tag>
-x.技术知识和应用(满分:25分) <num-technical-skills></num-technical-skills>
- xx.修改建议(结合项目经历、技术栈) <str-enterpoint></str-enterpoint>
-x.沟通能力(满分:20分) <num-communication></num-communication>
- xx.修改建议(结合项目经历、技术栈) <str-enterpoint></str-enterpoint>
-x.问题解决能力(满分:20分) <num-problem-solving></num-problem-solving>
- xx.修改建议(结合项目经历、技术栈) <str-enterpoint></str-enterpoint>
-x.项目经验和角色适应性(满分:20分)  <num-experience-adaptability></num-experience-adaptability>
- xx.修改建议(结合项目经历、技术栈) <str-enterpoint></str-enterpoint>
-x.专业度和激情(满分:15分) <num-professionalism-passion></num-professionalism-passion>
- xx.修改建议(结合项目经历、技术栈) <str-enterpoint></str-enterpoint>
-x.学历分数(满分:10分) <num-education></num-education>
-x.计算总分(满分:100分) <num-total-score></num-total-score>
-x.进行总体简历修改建议(这里要加上学校排位、学位评价、学校专业能力评价) <str-enterpoint></str-enterpoint>
-x.进行应聘岗位匹配度修改建议 <str-position></str-position>
+开始匹配我所需要的参数前，我要告诉你我需要大分差打分
+你可以参考：高校排名、学位水平、学校专业水平、比赛含金量...等
+<str-name>匹配简历主人姓名</str-name>
+<str-school>匹配简历主人学校</str-school>
+<str-degree>匹配简历主人学位</str-degree>
+<str-major>匹配简历主人专业</str-major>
+<str-tag>匹配简历亮点标签(5个以上)(用;分割) </str-tag>
+<num-technical-skills>技术知识和应用(包括教育经历、学历、工作经历、项目经历、个人技能等)(满分:40分)</num-technical-skills>
+ <str-enterpoint>详细修改建议</str-enterpoint>
+<num-communication>沟通能力(包括工作内容、项目责任、自我评价等)(满分:10分)</num-communication>
+ <str-enterpoint>详细修改建议</str-enterpoint>
+ <num-problem-solving>问题解决能力(包括项目责任、工作内容、政治面貌、自我评价等)(满分:20分)</num-problem-solving>
+ <str-enterpoint>详细修改建议</str-enterpoint>
+<num-experience-adaptability>项目经验和角色适应性(包括工作经历、项目经历、自我评价等)(满分:20分)</num-experience-adaptability>
+ <str-enterpoint>详细修改建议</str-enterpoint>
+<num-professionalism-passion>专业度和激情(包括个人技能、项目责任、工作经历等)(满分:10分)</num-professionalism-passion>
+ <str-enterpoint>详细修改建议</str-enterpoint>
+<num-total-score>计算总分(满分:100分) </num-total-score>
+<str-enterpoint>结合评分细则进行总体简历修改建议(例如要加上项目经历、工作经历、个人技能、自我评价、岗位匹配、学校排位、学位评价、学校专业能力评价等多维度评价)</str-enterpoint>
