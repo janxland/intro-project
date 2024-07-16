@@ -215,7 +215,7 @@ export class IntroService {
     }
     return { code: RCode.OK, msg: '简历特殊分算法写入成功', data: introResponeds };
   }
-  matchIntro(intro:Intro){
+  matchIntro(intro:Intro){ //匹配字段进数据库
     const score = intro.assessment.match(/<num-total-score>([^<]+)<\/num-total-score>/);
     const name = intro.assessment.match(/<str-name>([^<]+)<\/str-name>/);
     const school = intro.assessment.match(/<str-school>([^<]+)<\/str-school>/);
